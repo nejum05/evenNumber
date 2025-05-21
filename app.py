@@ -1,24 +1,19 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return '''
-        <form action="/generate">
-            Enter a number: <input type="number" name="n">
-            <input type="submit" value="Generate">
-        </form>
-    '''
+    return render_template('home.html')
 
 @app.route('/generate')
 def generate():
     try:
         n = int(request.args.get('n'))
-        evens = [str(i*2) for i in range(n)]
-        return 'Even numbers: ' + ', '.join(evens)
+        evens = [str(i * 2) for i in range(n)]
+        return render_template('result.html', evens=evens)
     except:
-        return 'Please enter a valid number.'
+        return render_template('error.html')
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

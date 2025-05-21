@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even Number Generator</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+        form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        input[type="number"] {
+            width: 250px;
+            padding: 10px;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/generate">
+        <h2>Enter a number</h2>
+        <input type="number" name="n" required><br>
+        <input type="submit" value="Generate">
+    </form>
+</body>
+</html>
